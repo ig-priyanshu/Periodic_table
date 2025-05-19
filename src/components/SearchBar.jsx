@@ -13,7 +13,8 @@ export default function SearchBar({ value, onChange }) {
         border: "1px solid #bbb",
         width: "100%",
         maxWidth: "320px",
-        fontSize: "1em"
+        fontSize: "1em",
+        backgroundColor:""
       }}
     />
   );
