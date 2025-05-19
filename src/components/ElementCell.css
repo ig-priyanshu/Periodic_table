@@ -1,0 +1,44 @@
+.element-cell {
+  border: 1px solid #bbb;
+  min-width: 80px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 2px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background-image: linear-gradient(244deg, #757d60b8, #c8cecabd);
+
+}
+
+.element-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.element-symbol {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #1a1616;
+}
+
+.element-number {
+  font-size: 0.9em;
+  color: #2b2424;
+}
+
+/* Search highlight states */
+.search-match {
+  border: 2px solid #1976d2 !important;
+  box-shadow: 0 0 12px rgba(25, 118, 210, 0.2);
+  z-index: 2;
+}
+
+.search-dim {
+  filter: grayscale(80%) opacity(0.6);
+  transform: scale(0.95);
+}

@@ -1,0 +1,43 @@
+.app-header {
+  width: 90vw;
+  background: #f5f2f2;
+  margin-left: calc(50% - 80vw);
+  margin-right: calc(50% - 80vw);
+  padding: 1rem ;
+  box-shadow: 12px 12px 20px 20px rgba(104, 73, 73, 0.08);
+
+  border-radius: 16px;
+  position: relative;
+}
+
+.header-row {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Left and right alignment */
+}
+
+.header-left {
+  text-align: left;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  /* Optionally add min-width or max-width as needed */
+}
+
+.app-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: 0.05em;
+  color: #222;
+}
+
+.app-subtitle {
+  margin: 0.5em 0 0 0;
+  font-size: 1.1rem;
+  color: #666;
+}

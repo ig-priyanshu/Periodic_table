@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+    
+
+}
+.card {
+  padding: 2em;
+}
+
+
+
+.main-content {
+  max-width: 1800px;
+  margin: 0 auto;           /* Horizontally center */
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Center children horizontally */
+}
+
+/* Optionally, center the table grid itself if needed: */
