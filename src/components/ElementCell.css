@@ -43,3 +43,23 @@
   filter: grayscale(80%) opacity(0.6);
   transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+  .element-symbol {
+    font-size: 1.2em; /* Original: 1.5em */
+  }
+
+  .element-number {
+    font-size: 0.8em; /* Original: 0.9em */
+  }
+}
+
+@media (max-width: 480px) {
+  .element-symbol {
+    font-size: 1em; /* Further reduced from 1.2em */
+  }
+
+  .element-number {
+    font-size: 0.7em; /* Further reduced from 0.8em */
+  }
+}
