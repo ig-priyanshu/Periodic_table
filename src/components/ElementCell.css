@@ -52,6 +52,9 @@
   .element-number {
     font-size: 0.4em; /* Original: 0.9em */
   }
+  .element-cell{
+    border-radius: 0.3em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -61,5 +64,8 @@
 
   .element-number {
     font-size: 0.2em; /* Further reduced from 0.8em */
+  }
+  .element-cell{
+    border-radius: 0.15em;
   }
 }
