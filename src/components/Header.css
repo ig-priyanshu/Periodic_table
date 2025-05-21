@@ -1,9 +1,7 @@
 .app-header {
-  width: 90vw;
+  width: 100%;
   background: #f5f2f2;
-  margin-left: calc(50% - 80vw);
-  margin-right: calc(50% - 80vw);
-  padding: 1rem ;
+  padding: 1rem 2rem;
   box-shadow: 12px 12px 20px 20px rgba(104, 73, 73, 0.08);
 
   border-radius: 16px;
@@ -40,4 +38,28 @@
   margin: 0.5em 0 0 0;
   font-size: 1.1rem;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .header-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Adjust gap as needed */
+  }
+
+  .app-title {
+    font-size: 1.8rem; /* Original was 2.3rem */
+  }
+
+  .app-subtitle {
+    font-size: 1rem; /* Original was 1.1rem */
+  }
+  
+  .header-left {
+    text-align: center; /* Center text when stacked */
+  }
+
+  .header-right {
+    margin-top: 0.5rem; /* Add some space above search bar when stacked */
+  }
 }
