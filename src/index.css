@@ -126,19 +126,19 @@ button:focus-visible {
   --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Darker, more conventional shadow */
   --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.35); /* Darker hover shadow */
 
-  /* Revised Dark theme block colors for better vibrancy */
-  --color-s-block: #60b0ff;
-  --color-p-block: #80d083;
-  --color-d-block: #ffc060;
-  --color-f-block: #f570a0;
+  /* Revised Dark theme block colors for Dull Aesthetic */
+  --color-s-block: #5c7a96;
+  --color-p-block: #6a8a6b;
+  --color-d-block: #967e5c;
+  --color-f-block: #936779;
 
-  /* Revised Gradient HSL base values for dark theme */
+  /* Revised Gradient HSL base values for dark theme - Dull Aesthetic */
   --gradient-hue-start: 220; /* Keep hues same as light for consistency in meaning */
   --gradient-hue-mid: 120;  /* No change */
   --gradient-hue-end: 10;    /* No change */
-  --gradient-saturation: 80%; /* Increased from 75% */
-  --gradient-lightness-base: 60%; /* Increased from 50% */
-  --gradient-lightness-factor: 25%; /* Increased from 20% */
+  --gradient-saturation: 45%; /* Dull: Reduced from 80% */
+  --gradient-lightness-base: 45%; /* Dull: Reduced from 60% */
+  --gradient-lightness-factor: 15%; /* Dull: Reduced from 25% */
 
   --button-bg: #333333;
   --button-text-color: #e0e0e0;
