@@ -46,11 +46,17 @@
 
 @media (max-width: 768px) {
   .element-symbol {
-    font-size: 0.7em; /* Original: 1.5em */
+
+
+    font-size: 0.6em; /* Original: 1.5em */
   }
 
   .element-number {
-    font-size: 0.5em; /* Original: 0.9em */
+    font-size: 0.4em; /* Original: 0.9em */
+  }
+  .element-cell{
+    border-radius: 0.3em;
+
   }
 }
 
@@ -60,6 +66,10 @@
   }
 
   .element-number {
-    font-size: 0.3em; /* Further reduced from 0.8em */
+
+    font-size: 0.2em; /* Further reduced from 0.8em */
+  }
+  .element-cell{
+    border-radius: 0.15em;
   }
 }
