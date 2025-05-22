@@ -1,0 +1,23 @@
+.theme-toggle-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid var(--element-cell-border);
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 90px; /* Adjusted min-width slightly for text like "Light Mode" */
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  margin-left: 1rem; /* Add some space from the search bar */
+}
+
+.theme-toggle-button:hover {
+  border-color: var(--button-hover-border); /* Optional: slightly change bg on hover */
+  /* background-color: var(--button-hover-bg); If you define such a variable */
+}
+
+.theme-toggle-button:focus {
+  outline: 2px solid var(--button-hover-border);
+  outline-offset: 2px;
+}

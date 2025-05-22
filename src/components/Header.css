@@ -1,8 +1,8 @@
 .app-header {
   width: 100%;
-  background: #f5f2f2;
+  background: var(--header-bg);
   padding: 1rem 2rem;
-  box-shadow: 12px 12px 20px 20px rgba(104, 73, 73, 0.08);
+  box-shadow: var(--element-cell-shadow); /* Mapped to general cell shadow */
 
   border-radius: 16px;
   position: relative;
@@ -31,13 +31,13 @@
   font-weight: 700;
   font-size: 2.3rem;
   letter-spacing: 0.05em;
-  color: #222;
+  color: var(--header-text-primary);
 }
 
 .app-subtitle {
   margin: 0.5em 0 0 0;
   font-size: 1.1rem;
-  color: #666;
+  color: var(--header-text-secondary);
 }
 
 @media (max-width: 768px) {

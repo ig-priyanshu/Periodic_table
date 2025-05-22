@@ -1,10 +1,12 @@
-import { blockColors } from "../assets/BlockColors";
 export function getElementBackgroundColor(element, filter, options) {
   if (!filter) return undefined;
 
   // Block coloring (for block filter)
   if (filter === "block") {
-    return blockColors[element.block] || undefined;
+    if (element.block && ['s', 'p', 'd', 'f'].includes(element.block)) {
+      return `var(--color-${element.block}-block)`;
+    }
+    return undefined; // Fallback if block is not s, p, d, or f
   }
 
   // Numeric filters: smooth gradient
@@ -19,28 +21,37 @@ export function getElementBackgroundColor(element, filter, options) {
   return undefined;
 }
 
-// Smooth gradient from blue -> green -> yellow -> orange -> red
+// Smooth gradient based on theme variables
 function getSmoothGradientColor(value, range) {
   if (!range || value == null) return undefined;
-  const percent = (value - range.min) / (range.max - range.min);
+  const percent = Math.max(0, Math.min(1, (value - range.min) / (range.max - range.min))); // Ensure percent is 0-1
 
-  // Map percent to hue: 220 (blue) -> 120 (green) -> 60 (yellow) -> 10 (red)
-  // You can adjust the hue stops for your taste!
+  const rootStyle = getComputedStyle(document.documentElement);
+  const hueStart = parseFloat(rootStyle.getPropertyValue('--gradient-hue-start').trim());
+  const hueMid = parseFloat(rootStyle.getPropertyValue('--gradient-hue-mid').trim());
+  const hueEnd = parseFloat(rootStyle.getPropertyValue('--gradient-hue-end').trim());
+
+  const saturation = rootStyle.getPropertyValue('--gradient-saturation').trim(); // e.g., "80%"
+  const baseLightness = parseFloat(rootStyle.getPropertyValue('--gradient-lightness-base').trim());
+  const lightnessFactor = parseFloat(rootStyle.getPropertyValue('--gradient-lightness-factor').trim());
+
   let hue;
   if (percent < 0.5) {
-    // Blue to Green
-    hue = 220 - (percent * 2) * 100; // 220 to 120
+    // Interpolate from hueStart to hueMid
+    hue = hueStart - (percent * 2) * (hueStart - hueMid);
   } else {
-    // Green to Red
-    hue = 120 - ((percent - 0.5) * 2) * 110; // 120 to 10
+    // Interpolate from hueMid to hueEnd
+    hue = hueMid - ((percent - 0.5) * 2) * (hueMid - hueEnd);
   }
 
-  // Clamp hue between 10 and 220
-  hue = Math.max(10, Math.min(220, hue));
+  // Clamp hue: Ensure it's within the min/max of the defined stops
+  const minHue = Math.min(hueStart, hueMid, hueEnd);
+  const maxHue = Math.max(hueStart, hueMid, hueEnd);
+  hue = Math.max(minHue, Math.min(maxHue, hue));
+  
+  const finalLightness = baseLightness - percent * lightnessFactor;
+  // Ensure lightness stays within a reasonable range, e.g., 10% to 90%
+  const clampedLightness = Math.max(10, Math.min(90, finalLightness));
 
-  // You can also interpolate saturation and lightness for more depth
-  const saturation = 80;
-  const lightness = 70 - percent * 20;
-
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  return `hsl(${hue}, ${saturation}, ${clampedLightness}%)`;
 }

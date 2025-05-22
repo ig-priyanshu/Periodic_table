@@ -1,4 +1,5 @@
 import './Header.css';
+import ThemeToggleButton from './ThemeToggleButton.jsx'; // Added import
 
 export default function Header({ searchBar }) {
   return (
@@ -10,6 +11,7 @@ export default function Header({ searchBar }) {
         </div>
         <div className="header-right">
           {searchBar}
+          <ThemeToggleButton /> {/* Added button */}
         </div>
       </div>
     </header>
