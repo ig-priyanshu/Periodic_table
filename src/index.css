@@ -3,29 +3,75 @@
 @tailwind utilities;
 
 :root {
-    --default-element-bg: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
-  --default-element-border: #dee2e6;
+  /* Font properties */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f5f2f2;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Light Theme Colors - Restored to Original Values */
+  --page-bg: #f5f2f2; /* Original body/app background */
+  --text-color: #213547; /* Original text color */
+  --text-color-muted: #555555; /* Keeping this as it was an addition, can be adjusted if needed */
+
+  --header-bg: #f5f2f2; /* Original header background */
+  --header-text-primary: #222222; /* Original app-title color */
+  --header-text-secondary: #666666; /* Original app-subtitle color */
+  /* Special header shadow - might need its own variable if distinct from cell shadow */
+  --header-original-shadow: 12px 12px 20px 20px rgba(104, 73, 73, 0.08); 
+
+  --element-cell-bg: linear-gradient(244deg, #757d60b8, #c8cecabd); /* Original gradient */
+  --element-cell-border: #cccccc; /* Original #bbb was a bit dark, using a slightly lighter common border */
+  --element-symbol-color: #1a1616; /* Original symbol color */
+  --element-number-color: #2b2424; /* Original number color */
+  --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Original shadow */
+  --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Original hover shadow */
+
+  /* Original Block Colors */
+  --color-s-block: #2196F3;
+  --color-p-block: #4CAF50;
+  --color-d-block: #FF9800;
+  --color-f-block: #E91E63;
+
+  /* Original Gradient HSL base values */
+  --gradient-hue-start: 220; /* Blue */
+  --gradient-hue-mid: 120;  /* Green */
+  --gradient-hue-end: 10;    /* Red */
+  --gradient-saturation: 80%;
+  --gradient-lightness-base: 70%; 
+  --gradient-lightness-factor: 20%; 
+
+  --button-bg: #f9f9f9; /* Original button background */
+  --button-text-color: #213547; /* Original button text color (inherited) */
+  --button-hover-border: #646cff;
+
+  --link-color: #646cff;
+  --link-hover-color: #535bf2;
+
+  --search-match-border: #1976d2;
+  --search-match-shadow: rgba(25, 118, 210, 0.2);
+
+  /* Ensure color-scheme is light, and base bg/color use variables */
+  color-scheme: light;
+  background-color: var(--page-bg);
+  color: var(--text-color);
+
+  /* Other non-color variables like font families should remain untouched */
+  /* font-family, line-height etc. are already defined above and should not be repeated here */
+  /* --default-element-bg and --default-element-border are old, consider removing or ensuring they don't conflict */
+  /* For this operation, we are replacing the block, so these old ones are implicitly handled if not in new block */
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--link-color);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--link-hover-color);
 }
 
 body {
@@ -48,27 +94,63 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--button-hover-border);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.dark-theme {
+  /* Dark Theme Colors - Revised for Aesthetics */
+  --page-bg: #1f232c; /* Softer dark */
+  --text-color: #f0f0f0; /* Slightly brighter primary text */
+  --text-color-muted: #999daa; /* Cooler muted text */
+
+  --header-bg: #2a2f3a; /* Distinct header background */
+  --header-text-primary: #eeeeee;
+  --header-text-secondary: #bbbbbb;
+  /* Ensure header shadow in dark theme is subtle */
+  --header-original-shadow: 0 3px 10px rgba(0,0,0,0.3); /* Override for dark theme */
+
+  --element-cell-bg: linear-gradient(145deg, #2f3542, #252933); /* Neutral dark gradient */
+  --element-cell-border: #555555;
+  --element-symbol-color: #f0f0f0;
+  --element-number-color: #d0d0d0;
+  --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Darker, more conventional shadow */
+  --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.35); /* Darker hover shadow */
+
+  /* Revised Dark theme block colors for Improved Visibility */
+  --color-s-block: #6b8ea8;
+  --color-p-block: #78987a;
+  --color-d-block: #a89070;
+  --color-f-block: #a37a8a;
+
+  /* Revised Gradient HSL base values for dark theme - Improved Visibility */
+  --gradient-hue-start: 220; /* Keep hues same as light for consistency in meaning */
+  --gradient-hue-mid: 120;  /* No change */
+  --gradient-hue-end: 10;    /* No change */
+  --gradient-saturation: 55%;
+  --gradient-lightness-base: 55%;
+  --gradient-lightness-factor: 25%;
+
+  --button-bg: #333333;
+  --button-text-color: #e0e0e0;
+  --button-hover-border: #747bff; /* This was already good */
+
+  --link-color: #82aaff; /* Slightly brighter links on dark bg */
+  --link-hover-color: #9ebbff;
+
+  --search-match-border: #60a0f0; /* Adjusted to match link brightness */
+  --search-match-shadow: rgba(96, 160, 240, 0.3);
+
+  color-scheme: dark;
+  background-color: var(--page-bg);
+  color: var(--text-color);
 }

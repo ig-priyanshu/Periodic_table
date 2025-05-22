@@ -1,0 +1,21 @@
+/* src/components/FilterSelector.css */
+.filter-selector {
+  /* Styles for the inner div, if needed, otherwise can be minimal */
+  /* For instance, if you want a specific width for the select parent */
+}
+
+.filter-dropdown {
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--element-cell-border);
+  background-color: var(--button-bg); /* Or a specific dropdown-bg variable */
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 200px; /* Ensure it's wide enough for labels */
+}
+
+.filter-dropdown:focus {
+  outline: 2px solid var(--button-hover-border);
+  outline-offset: 1px;
+}

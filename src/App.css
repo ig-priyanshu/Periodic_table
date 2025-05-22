@@ -21,3 +21,29 @@
 }
 
 /* Optionally, center the table grid itself if needed: */
+
+/* Layout for positioning FilterSelector and BlockLegend */
+.periodic-table-area {
+  position: relative;
+  width: 100%; /* Ensure it takes full width to contain absolute children correctly */
+  margin-top: 1.5rem; /* Space from header */
+  padding-top: 4.5rem; /* Add padding to the top of the area to make space for the absolutely positioned FilterSelector and BlockLegend */
+}
+
+.filter-selector-container {
+  position: absolute;
+  top: 0.5rem; /* Small gap from the top of periodic-table-area's padding */
+  right: 1rem; /* Small gap from the right */
+  z-index: 10;
+}
+
+.block-legend-container {
+  position: absolute;
+  top: 3.5rem; /* Position below where FilterSelector might be (approx height + gap) */
+  right: 1rem;
+  z-index: 10;
+  background-color: var(--header-bg); /* Example, use appropriate theme variable */
+  padding: 0.5rem;
+  border-radius: 6px;
+  box-shadow: var(--element-cell-shadow);
+}

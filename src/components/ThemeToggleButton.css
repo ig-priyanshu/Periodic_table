@@ -1,0 +1,39 @@
+.theme-toggle-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid var(--element-cell-border);
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500; /* Slightly bolder text */
+  min-width: 90px; 
+  text-align: center;
+  margin-left: 1rem; 
+  /* Enhanced transition for multiple properties */
+  transition: background-color 0.25s ease-in-out, 
+              border-color 0.25s ease-in-out, 
+              color 0.25s ease-in-out, 
+              transform 0.15s ease-in-out,
+              box-shadow 0.25s ease-in-out; /* Added box-shadow for focus */
+}
+
+.theme-toggle-button:hover {
+  border-color: var(--button-hover-border);
+  /* Optional: slightly change bg on hover if defined, e.g., var(--button-hover-bg) */
+  transform: scale(1.05); /* Add slight scale on hover */
+  box-shadow: 0 0 8px var(--button-hover-border); /* Add a subtle glow on hover */
+}
+
+.theme-toggle-button:active {
+  transform: scale(0.95); /* Add slight shrink on click */
+}
+
+.theme-toggle-button:focus {
+  outline: none; /* Remove default outline if we use box-shadow for focus */
+}
+
+.theme-toggle-button:focus-visible { /* Modern way to handle focus styling */
+  outline: none;
+  box-shadow: 0 0 0 3px var(--page-bg), 0 0 0 5px var(--button-hover-border); /* Multi-ring focus */
+}
