@@ -2,7 +2,7 @@
   width: 100%;
   background: var(--header-bg);
   padding: 1rem 2rem;
-  box-shadow: var(--element-cell-shadow); /* Mapped to general cell shadow */
+  box-shadow: var(--header-original-shadow); /* Use the specific header shadow */
 
   border-radius: 16px;
   position: relative;

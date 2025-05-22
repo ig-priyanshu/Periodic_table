@@ -12,51 +12,57 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Light Theme Colors */
-  --page-bg: #ffffff;
-  --text-color: #213547;
-  --text-color-muted: #555555; /* For subtitles or less important text */
-  
-  --header-bg: #f5f2f2;
-  --header-text-primary: #222222;
-  --header-text-secondary: #666666;
+  /* Light Theme Colors - Restored to Original Values */
+  --page-bg: #f5f2f2; /* Original body/app background */
+  --text-color: #213547; /* Original text color */
+  --text-color-muted: #555555; /* Keeping this as it was an addition, can be adjusted if needed */
 
-  --element-cell-bg: linear-gradient(244deg, #e2e8ddb8, #f0f2e9bd); /* Lighter default gradient */
-  --element-cell-border: #cccccc;
-  --element-symbol-color: #1a1616;
-  --element-number-color: #2b2424;
-  --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  --header-bg: #f5f2f2; /* Original header background */
+  --header-text-primary: #222222; /* Original app-title color */
+  --header-text-secondary: #666666; /* Original app-subtitle color */
+  /* Special header shadow - might need its own variable if distinct from cell shadow */
+  --header-original-shadow: 12px 12px 20px 20px rgba(104, 73, 73, 0.08); 
 
-  /* Colors for dynamic element backgrounds (block, category, gradient) */
+  --element-cell-bg: linear-gradient(244deg, #757d60b8, #c8cecabd); /* Original gradient */
+  --element-cell-border: #cccccc; /* Original #bbb was a bit dark, using a slightly lighter common border */
+  --element-symbol-color: #1a1616; /* Original symbol color */
+  --element-number-color: #2b2424; /* Original number color */
+  --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Original shadow */
+  --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Original hover shadow */
+
+  /* Original Block Colors */
   --color-s-block: #2196F3;
   --color-p-block: #4CAF50;
   --color-d-block: #FF9800;
   --color-f-block: #E91E63;
-  
-  /* Gradient HSL base values (can be adjusted per theme) */
+
+  /* Original Gradient HSL base values */
   --gradient-hue-start: 220; /* Blue */
   --gradient-hue-mid: 120;  /* Green */
   --gradient-hue-end: 10;    /* Red */
   --gradient-saturation: 80%;
-  --gradient-lightness-base: 70%; /* Base lightness for light theme */
-  --gradient-lightness-factor: 20%; /* How much lightness changes with value */
+  --gradient-lightness-base: 70%; 
+  --gradient-lightness-factor: 20%; 
 
-  --button-bg: #f0f0f0;
-  --button-text-color: #213547;
+  --button-bg: #f9f9f9; /* Original button background */
+  --button-text-color: #213547; /* Original button text color (inherited) */
   --button-hover-border: #646cff;
 
   --link-color: #646cff;
   --link-hover-color: #535bf2;
 
-  /* Default search highlight colors (can be themed too) */
   --search-match-border: #1976d2;
   --search-match-shadow: rgba(25, 118, 210, 0.2);
 
-  /* Ensure color-scheme is set for light by default */
+  /* Ensure color-scheme is light, and base bg/color use variables */
   color-scheme: light;
-  background-color: var(--page-bg); /* Use variable */
-  color: var(--text-color); /* Use variable */
+  background-color: var(--page-bg);
+  color: var(--text-color);
+
+  /* Other non-color variables like font families should remain untouched */
+  /* font-family, line-height etc. are already defined above and should not be repeated here */
+  /* --default-element-bg and --default-element-border are old, consider removing or ensuring they don't conflict */
+  /* For this operation, we are replacing the block, so these old ones are implicitly handled if not in new block */
 }
 
 a {
@@ -102,45 +108,47 @@ button:focus-visible {
 }
 
 .dark-theme {
-  /* Dark Theme Colors */
-  --page-bg: #121212;
-  --text-color: #e0e0e0;
-  --text-color-muted: #aaaaaa;
+  /* Dark Theme Colors - Revised for Aesthetics */
+  --page-bg: #1f232c; /* Softer dark */
+  --text-color: #f0f0f0; /* Slightly brighter primary text */
+  --text-color-muted: #999daa; /* Cooler muted text */
 
-  --header-bg: #1e1e1e;
+  --header-bg: #2a2f3a; /* Distinct header background */
   --header-text-primary: #eeeeee;
   --header-text-secondary: #bbbbbb;
+  /* Ensure header shadow in dark theme is subtle */
+  --header-original-shadow: 0 3px 10px rgba(0,0,0,0.3); /* Override for dark theme */
 
-  --element-cell-bg: linear-gradient(244deg, #3a3f36b8, #4c5047bd); /* Darker default gradient */
+  --element-cell-bg: linear-gradient(145deg, #2f3542, #252933); /* Neutral dark gradient */
   --element-cell-border: #555555;
   --element-symbol-color: #f0f0f0;
   --element-number-color: #d0d0d0;
-  --element-cell-shadow: 0 2px 8px rgba(255,255,255,0.05); /* Shadows might be lighter or different in dark mode */
-  --element-cell-hover-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  --element-cell-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Darker, more conventional shadow */
+  --element-cell-hover-shadow: 0 4px 12px rgba(0,0,0,0.35); /* Darker hover shadow */
 
-  /* Dark theme block colors */
-  --color-s-block: #59a9f7; /* Lighter blue */
-  --color-p-block: #7cc67f; /* Lighter green */
-  --color-d-block: #ffb74d; /* Lighter orange */
-  --color-f-block: #f06292; /* Lighter pink */
+  /* Revised Dark theme block colors for better vibrancy */
+  --color-s-block: #60b0ff;
+  --color-p-block: #80d083;
+  --color-d-block: #ffc060;
+  --color-f-block: #f570a0;
 
-  /* Gradient HSL base values for dark theme */
-  --gradient-hue-start: 220;
+  /* Revised Gradient HSL base values for dark theme */
+  --gradient-hue-start: 220; /* Keep hues same as light for consistency in meaning */
   --gradient-hue-mid: 120;
   --gradient-hue-end: 10;
-  --gradient-saturation: 70%; /* Slightly less saturated for dark bg */
-  --gradient-lightness-base: 40%; /* Base lightness for dark theme - darker elements */
-  --gradient-lightness-factor: 15%;
+  --gradient-saturation: 75%; /* Slightly more vibrant */
+  --gradient-lightness-base: 50%; /* Lighter elements on dark background */
+  --gradient-lightness-factor: 20%; /* Range of lightness change */
 
   --button-bg: #333333;
   --button-text-color: #e0e0e0;
-  --button-hover-border: #747bff;
+  --button-hover-border: #747bff; /* This was already good */
 
-  --link-color: #747bff;
-  --link-hover-color: #8a8fff;
-  
-  --search-match-border: #539bf2;
-  --search-match-shadow: rgba(83, 155, 242, 0.3);
+  --link-color: #82aaff; /* Slightly brighter links on dark bg */
+  --link-hover-color: #9ebbff;
+
+  --search-match-border: #60a0f0; /* Adjusted to match link brightness */
+  --search-match-shadow: rgba(96, 160, 240, 0.3);
 
   color-scheme: dark;
   background-color: var(--page-bg);
