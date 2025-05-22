@@ -134,11 +134,11 @@ button:focus-visible {
 
   /* Revised Gradient HSL base values for dark theme */
   --gradient-hue-start: 220; /* Keep hues same as light for consistency in meaning */
-  --gradient-hue-mid: 120;
-  --gradient-hue-end: 10;
-  --gradient-saturation: 75%; /* Slightly more vibrant */
-  --gradient-lightness-base: 50%; /* Lighter elements on dark background */
-  --gradient-lightness-factor: 20%; /* Range of lightness change */
+  --gradient-hue-mid: 120;  /* No change */
+  --gradient-hue-end: 10;    /* No change */
+  --gradient-saturation: 80%; /* Increased from 75% */
+  --gradient-lightness-base: 60%; /* Increased from 50% */
+  --gradient-lightness-factor: 25%; /* Increased from 20% */
 
   --button-bg: #333333;
   --button-text-color: #e0e0e0;

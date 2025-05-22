@@ -33,18 +33,17 @@ export default function App() {
     />
   }
 />
-      <FilterSelector onFilterChange={setCurrentFilter} />
-      {currentFilter === 'block' && <BlockLegend />}
-      
-      
-      
-      <PeriodicTable
-        elements={filteredElements}  // Don't forget to pass elements prop
-        onElementClick={setSelectedElement}
+      <div className="periodic-table-area">
+        <FilterSelector onFilterChange={setCurrentFilter} />
+        {currentFilter === 'block' && <BlockLegend />}
+        <PeriodicTable
+          elements={filteredElements}  // Don't forget to pass elements prop
+          onElementClick={setSelectedElement}
         searchTerm={searchTerm}
         currentFilter={currentFilter}
         filterOptions={filterOptions}
-      />
+        />
+      </div>
       <ElementModal
         element={selectedElement}
         

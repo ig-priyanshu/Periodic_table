@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './FilterSelector.css'; // Import the CSS file
 
 const filterOptions = [
   { value: 'block', label: 'Electron Block' },
